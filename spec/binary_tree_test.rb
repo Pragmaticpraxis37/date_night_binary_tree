@@ -82,7 +82,7 @@ describe 'binary tree' do
     expect(tree.sort).to eq(result)
   end
 
-  it 'can return the value of all nodes at a particular depth in the tree' do
+  xit 'can return the value of all nodes at a particular depth in the tree' do
     tree.insert(98, "Animals United")
     tree.insert(58, "Armageddon")
     tree.insert(36, "Bill & Ted's Bogus Journey")

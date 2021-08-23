@@ -135,6 +135,26 @@ class BinarySearchTree
     hash
   end
 
+  def sort
+    stack = []
+    result = []
+    root = @tree
+  
+    while !stack.empty? || root != nil
+      while root != nil
+        stack.append(root)
+        root = root.left_node
+      end
+  
+      root = stack.pop
+      # require "pry"; binding.pry 
+      result.append(create_hash(root.score, root.title))
+      root = root.right_node
+    end
+    
+    result 
+  end
+
 end
 
 
@@ -164,26 +184,4 @@ end
 
 
 
-# def sort
-#   stack = []
-#   result = []
-#   root = @tree
-#
-#   while !stack.empty? || root != nil
-#     require "pry"; binding.pry
-#     while root != nil
-#       require "pry"; binding.pry
-#       stack.append(root)
-#       require "pry"; binding.pry
-#       root = root.left_node
-#       require "pry"; binding.pry
-#     end
-#
-#     root = stack.pop
-#     require "pry"; binding.pry
-#     result.append(root.score)
-#     require "pry"; binding.pry
-#     root = root.right_node
-#   end
-# require "pry"; binding.pry
-# end
+
